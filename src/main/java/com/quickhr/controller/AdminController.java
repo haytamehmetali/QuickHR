@@ -161,14 +161,4 @@ public class AdminController {
                 .build());
     }
     
-    @PostMapping(REFRESH_ACCESS_TOKEN)
-    public ResponseEntity<BaseResponse<String>> dsa(@RequestParam String refreshToken) {
-        String newAccessToken = adminService.refreshAccessToken(refreshToken);
-        return ResponseEntity.ok(BaseResponse.<String>builder()
-                                             .code(200)
-                                             .success(true)
-                                             .data(newAccessToken)
-                                             .message("Yeni access token üretildi.")
-                                             .build());
-    }
 }
